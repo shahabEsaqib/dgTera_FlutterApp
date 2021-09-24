@@ -9,6 +9,7 @@ class AppBarScreen extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      
       actions: [
         IconButton(
             icon: const Icon(Icons.notifications_off,color: Colors.grey,),

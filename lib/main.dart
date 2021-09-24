@@ -1,8 +1,10 @@
+import 'package:dgtera_tablet_app/dashbored/dashbored.dart';
 import 'package:dgtera_tablet_app/pages/homePage.dart';
-import 'package:dgtera_tablet_app/pages/login.dart';
-import 'package:dgtera_tablet_app/utilities/routes.dart';
+import 'package:dgtera_tablet_app/reports/reports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'utilities/routes.dart';
 
 void main()  {
    
@@ -29,10 +31,11 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
 
       routes: {
-        "/": (context) => Login(),
-        MyRoutes.homeRoute: (context) => MyHomePage(),
-        // MyRoutes.loginRoute: (context) => LoginPage(),
-        // MyRoutes.cartRoute: (context) => CartPage()
+        "/": (context) => ReportScreen(),
+        MyRoutes.dashboredRoute: (context) => DashboredScreen(),
+        MyRoutes.resumeRoute: (context) => ResumeScreen(),
+        MyRoutes.reports: (context) => ReportScreen(),
+        // MyRoutes.reports: (context) => VerticalTabs(backgroundColor: null,)
       }
     );
     

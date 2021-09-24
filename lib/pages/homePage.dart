@@ -2,12 +2,12 @@ import 'package:dgtera_tablet_app/widgets/appbar.dart';
 import 'package:dgtera_tablet_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
+class ResumeScreen extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _ResumeScreenState createState() => _ResumeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ResumeScreenState extends State<ResumeScreen> {
   Widget appBarTitle = Text(
     "My Properties",
     style: TextStyle(color: Colors.white),
@@ -31,14 +31,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.all(Radius.circular(8))),
                         width: 210,
-                        // width: MediaQuery.of(context).size.width-1050,
                         height: 45,
                         child: Center(
                           child: Row(
@@ -97,34 +96,68 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
+                  SingleChildScrollView(
+                    child: Container(
+                      height: 350,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(8),topRight: Radius.circular(8))),
+                    ),
+                  ),
+                  SingleChildScrollView(
+                    child: Container(
+                      height: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          
+                    )
+                    ),
+                  ),
                   Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(8))),
-                    height: MediaQuery.of(context).size.height - 195,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Container(
                           height: 45,
                           decoration: BoxDecoration(
                               color: Colors.purpleAccent,
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(8))),
+                                  BorderRadius.only(bottomLeft: Radius.circular(8),bottomRight: Radius.circular(8))),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("Pay Now"),
-                                Text("0 SAR >"),
+                                Text("Pay Now",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),),
+                                Text("0 SAR >",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),),
                               ],
                             ),
                           ),
                         ),
-                      ],
-                    ),
-                  ),
+                  // Container(
+                  //   decoration: BoxDecoration(
+                  //       color: Colors.white,
+                  //       borderRadius: BorderRadius.all(Radius.circular(8))),
+                  //   height: MediaQuery.of(context).size.height - 195,
+                  //   child: Column(
+                  //     mainAxisAlignment: MainAxisAlignment.end,
+                  //     children: [
+                  //       Container(
+                  //         height: 45,
+                  //         decoration: BoxDecoration(
+                  //             color: Colors.purpleAccent,
+                  //             borderRadius:
+                  //                 BorderRadius.all(Radius.circular(8))),
+                  //         child: Padding(
+                  //           padding: const EdgeInsets.all(8.0),
+                  //           child: Row(
+                  //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //             children: [
+                  //               Text("Pay Now"),
+                  //               Text("0 SAR >"),
+                  //             ],
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
             ),

@@ -1,6 +1,6 @@
 class MyRoutes {
-  static String homeRoute = "/home";
+  static String resumeRoute = "/resume";
   static var loginRoute = "/login";
-  static var homeDetailsRoute = "/detail";
-  static var cartRoute = "/cart";
+  static var dashboredRoute = "/dashbored";
+  static var reports = "/reports";
 }

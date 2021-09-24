@@ -1,3 +1,4 @@
+import 'package:dgtera_tablet_app/utilities/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -19,29 +20,35 @@ class MyDrawer extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(70, 60, 20, 20),
                 child: Text("POS",style: TextStyle(color: Colors.grey.shade700,fontSize: 20,fontWeight: FontWeight.bold),),
                 ),
-            ListTile(
-         
-                leading: Icon(
-                  CupertinoIcons.creditcard,
-                  color: Colors.grey,
-                ),
-                title: Text(
-                  "RESUME Shift",
-                  textScaleFactor: 1.2,
-                  style: TextStyle(color: Colors.grey[600],fontSize: 20),
-                )),
-            Container(
-              color: Colors.grey.shade400,
+            GestureDetector(
+              onTap: (){ Navigator.pushNamed(context, MyRoutes.resumeRoute);},
               child: ListTile(
+                     
                   leading: Icon(
                     CupertinoIcons.creditcard,
                     color: Colors.grey,
                   ),
                   title: Text(
-                    "Dashbored",
+                    "RESUME Shift",
                     textScaleFactor: 1.2,
                     style: TextStyle(color: Colors.grey[600],fontSize: 20),
                   )),
+            ),
+            GestureDetector(
+              onTap:(){ Navigator.pushNamed(context, MyRoutes.dashboredRoute);},
+              child: Container(
+                color: Colors.grey.shade400,
+                child: ListTile(
+                    leading: Icon(
+                      CupertinoIcons.creditcard,
+                      color: Colors.grey,
+                    ),
+                    title: Text(
+                      "Dashbored",
+                      textScaleFactor: 1.2,
+                      style: TextStyle(color: Colors.grey[600],fontSize: 20),
+                    )),
+              ),
             ),
            ListTile(
                   leading: Icon(
@@ -53,16 +60,21 @@ class MyDrawer extends StatelessWidget {
                     textScaleFactor: 1.2,
                     style: TextStyle(color: Colors.grey[600],fontSize: 20),
                   )),
-                  ListTile(
-                  leading: Icon(
-                    CupertinoIcons.doc_richtext,
-                    color: Colors.grey,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, MyRoutes.reports);
+                    },
+                    child: ListTile(
+                    leading: Icon(
+                      CupertinoIcons.doc_richtext,
+                      color: Colors.grey,
+                    ),
+                    title: Text(
+                      "Report",
+                      textScaleFactor: 1.2,
+                      style: TextStyle(color: Colors.grey[600],fontSize: 20),
+                    )),
                   ),
-                  title: Text(
-                    "Report",
-                    textScaleFactor: 1.2,
-                    style: TextStyle(color: Colors.grey[600],fontSize: 20),
-                  )),
                   Container(
                     color: Color(0xfffff1f1),
                     child: ListTile(
