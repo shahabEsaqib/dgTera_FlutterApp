@@ -1,5 +1,7 @@
 import 'package:dgtera_tablet_app/dashbored/dashbored.dart';
-import 'package:dgtera_tablet_app/pages/homePage.dart';
+import 'package:dgtera_tablet_app/history.dart';
+import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShift.dart';
+import 'package:dgtera_tablet_app/pages/login.dart';
 import 'package:dgtera_tablet_app/reports/reports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -31,11 +33,11 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
 
       routes: {
-        "/": (context) => ReportScreen(),
+        "/": (context) => Login(),
         MyRoutes.dashboredRoute: (context) => DashboredScreen(),
         MyRoutes.resumeRoute: (context) => ResumeScreen(),
         MyRoutes.reports: (context) => ReportScreen(),
-        // MyRoutes.reports: (context) => VerticalTabs(backgroundColor: null,)
+        MyRoutes.history: (context) => HistoryScreen()
       }
     );
     

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SalesReport extends StatelessWidget {
-  const SalesReport({
+class DiscountReports extends StatelessWidget {
+  const DiscountReports({
     Key? key,
   }) : super(key: key);
 
@@ -19,14 +19,15 @@ class SalesReport extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 16),
-                  child: Text("Date:",
+                  child: Text("All",
                       style: TextStyle(
-                        fontSize: 20,
-                      )),
+                          fontSize: 20,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold)),
                 ),
                 SizedBox(width: 16),
                 Text(
-                  "02/09/2021",
+                  "From:02/09/2021",
                   style: TextStyle(
                       fontSize: 20,
                       color: Colors.blue,
@@ -35,14 +36,7 @@ class SalesReport extends StatelessWidget {
                 SizedBox(
                   width: 16,
                 ),
-                Text("Shift:",
-                    style: TextStyle(
-                      fontSize: 20,
-                    )),
-                SizedBox(
-                  width: 16,
-                ),
-                Text("summary",
+                Text("To:02/09/2021",
                     style: TextStyle(
                         fontSize: 20,
                         color: Colors.blue,
@@ -59,18 +53,31 @@ class SalesReport extends StatelessWidget {
               children: [
                 Container(
                   width: 450,
-                  height: 100,
+                  height: 200,
                   decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       border: Border.all(color: Colors.black, width: 3)),
                   child: Center(
                       child: Text(
-                    "Sales report",
+                    "Sales report \n summary",
                     style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
                   )),
                 ),
                 SizedBox(
                   height: 30,
+                ),
+                Center(
+                    child: Text("02/09/2021 to 02/09/2021",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 25))),
+                SizedBox(
+                  height: 8,
+                ),
+                Divider(
+                  thickness: 3,
+                ),
+                SizedBox(
+                  height: 8,
                 ),
                 Row(
                   children: [
@@ -96,7 +103,7 @@ class SalesReport extends StatelessWidget {
                     Container(
                         width: 250,
                         // height: 40,
-                        child: Text("Business day",
+                        child: Text("Start Date",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 25))),
                     SizedBox(
@@ -105,7 +112,7 @@ class SalesReport extends StatelessWidget {
                     Container(
                         width: 350,
                         // height: 40,
-                        child: Text(":02/09/2021",
+                        child: Text(":02/09/2021 03:54 AM",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 25))),
                   ],
@@ -115,7 +122,7 @@ class SalesReport extends StatelessWidget {
                     Container(
                         width: 250,
                         // height: 40,
-                        child: Text("From",
+                        child: Text("End Date",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 25))),
                     SizedBox(
@@ -124,26 +131,7 @@ class SalesReport extends StatelessWidget {
                     Container(
                         width: 350,
                         // height: 40,
-                        child: Text(":2021-09-02 03:54 AM",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 25))),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Container(
-                        width: 250,
-                        // height: 40,
-                        child: Text("To",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 25))),
-                    SizedBox(
-                      width: 8,
-                    ),
-                    Container(
-                        width: 350,
-                        // height: 40,
-                        child: Text(":",
+                        child: Text(":2021-09-02 05:24 AM",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 25))),
                   ],
@@ -153,126 +141,52 @@ class SalesReport extends StatelessWidget {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 170,
+                  height: 130,
                   decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       border: Border.all(color: Colors.black, width: 3)),
                   child: Padding(
-                    padding: const EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.only(top: 12, left: 8, right: 8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Payment summary",
-                          style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline),
-                        ),
-                        SizedBox(
-                          height: 70,
-                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "payment summary",
+                              "Dicount",
                               style: TextStyle(
                                   fontSize: 25,
                                   fontWeight: FontWeight.bold,
                                   decoration: TextDecoration.underline),
                             ),
                             Text(
-                              "0",
+                              "SAR",
                               style: TextStyle(
                                   fontSize: 25, fontWeight: FontWeight.bold),
                             ),
                           ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 170,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      border: Border.all(color: Colors.black, width: 3)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Order Type summary",
-                          style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline),
                         ),
                         SizedBox(
-                          height: 70,
+                          height: 32,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "Order Type summary",
+                              "Totle",
                               style: TextStyle(
                                   fontSize: 25,
                                   fontWeight: FontWeight.bold,
                                   decoration: TextDecoration.underline),
                             ),
                             Text(
-                              "0",
+                              "0.00",
                               style: TextStyle(
                                   fontSize: 25, fontWeight: FontWeight.bold),
                             ),
                           ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 170,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      border: Border.all(color: Colors.black, width: 3)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Payment - Order Type summary",
-                          style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline),
                         ),
-                        SizedBox(
-                          height: 70,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Payment - Order Type summary",
-                              style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  decoration: TextDecoration.underline),
-                            ),
-                            Text(
-                              "0",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        )
                       ],
                     ),
                   ),

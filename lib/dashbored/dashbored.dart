@@ -1,3 +1,4 @@
+import 'package:dgtera_tablet_app/utilities/routes.dart';
 import 'package:dgtera_tablet_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -38,92 +39,120 @@ class DashboredScreen extends StatelessWidget {
             color: Colors.white,
             width: MediaQuery.of(context).size.width * .55,
             child: Stack(
-              // clipBehavior: Clip.hardEdge,
-              children: [
-              CustomPaint(
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-              ),
-              painter: HeaderCurvedContainer(),
+                // clipBehavior: Clip.hardEdge,
+                children: [
+                  CustomPaint(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height,
+                    ),
+                    painter: HeaderCurvedContainer(),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          'User111',
+                          style: TextStyle(
+                            fontSize: 35.0,
+                            letterSpacing: 1.5,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width / 8,
+                        height: MediaQuery.of(context).size.width / 8,
+                        padding: const EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/google-logo.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 64,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  'User111',
-                  style: TextStyle(
-                    fontSize: 35.0,
-                    letterSpacing: 1.5,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-            
-                  ),
-                ),
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width / 8,
-                height: MediaQuery.of(context).size.width / 8,
-                padding: const EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/google-logo.png"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              SizedBox(height: 64,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                Text("Last login", style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-                SizedBox(height: 4,),
-                Text("21 Sep 2021", style: TextStyle(fontSize: 20,color: Colors.grey),),
-                SizedBox(height: 16,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  OutlinedButton(
-                onPressed: (){},
-                child: Container(
-                      width: 250,
-                      height:80 ,
-                      
-                      child: Center(child: Text("Resume sesion",style: TextStyle(color: Colors.grey,fontSize:25))),
-                    ),
-              ),
-                  SizedBox(width: 12,),
-                  OutlinedButton(
-                onPressed: (){},
-                child: Container(
-                      width: 250,
-                      height:80 ,
-                      
-                      child: Center(child: Text("End session",style: TextStyle(color: Colors.grey,fontSize:25))),
-                    ),
-              ),
-                ],
-              ),
-              SizedBox(height: 12,),
-              OutlinedButton(
-                onPressed: (){
-                  MyDrawer();
-                },
-                child: Container(
-                      width: 250,
-                      height:80 ,
-                      
-                      child: Center(child: Text("Open Drawer",style: TextStyle(color: Colors.grey,fontSize:25))),
-                    ),
-              ),
-              ],)
+                          Text(
+                            "Last login",
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          Text(
+                            "21 Sep 2021",
+                            style: TextStyle(fontSize: 20, color: Colors.grey),
+                          ),
+                          SizedBox(
+                            height: 16,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              OutlinedButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, MyRoutes.resumeRoute);
+                                },
+                                child: Container(
+                                  width: 250,
+                                  height: 80,
+                                  child: Center(
+                                      child: Text("Resume sesion",
+                                          style: TextStyle(
+                                              color: Colors.grey,
+                                              fontSize: 25))),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 12,
+                              ),
+                              OutlinedButton(
+                                onPressed: () {},
+                                child: Container(
+                                  width: 250,
+                                  height: 80,
+                                  child: Center(
+                                      child: Text("End session",
+                                          style: TextStyle(
+                                              color: Colors.grey,
+                                              fontSize: 25))),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 12,
+                          ),
+                          OutlinedButton(
+                            onPressed: () {
+                              MyDrawer();
+                            },
+                            child: Container(
+                              width: 250,
+                              height: 80,
+                              child: Center(
+                                  child: Text("Open Drawer",
+                                      style: TextStyle(
+                                          color: Colors.grey, fontSize: 25))),
+                            ),
+                          ),
                         ],
-                        ),
-            ]),
+                      )
+                    ],
+                  ),
+                ]),
           ),
           Expanded(
               child: Column(
@@ -157,24 +186,27 @@ class DashboredScreen extends StatelessWidget {
                   )),
               Expanded(
                 child: ListView.separated(
-                    separatorBuilder: (context, index){return Divider();},
+                    separatorBuilder: (context, index) {
+                      return Divider();
+                    },
                     itemCount: 13,
                     itemBuilder: (BuildContext context, int index) {
                       return ListTile(
-                        
                         leading: Text(
                           "POS",
-                          style:
-                              TextStyle(color: Colors.grey[600], fontSize: 20,fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: Colors.grey[600],
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                         ),
                         trailing: Text(
                           "POS07",
-                          style:
-                              TextStyle(color: Colors.grey[600], fontSize: 20,fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: Colors.grey[600],
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                         ),
-                        
                       );
-                      
                     }),
               ),
             ],
@@ -185,6 +217,7 @@ class DashboredScreen extends StatelessWidget {
     );
   }
 }
+
 class HeaderCurvedContainer extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {

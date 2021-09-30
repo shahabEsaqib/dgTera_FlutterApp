@@ -9,8 +9,6 @@ class Login extends StatefulWidget {
   _LoginState createState() => _LoginState();
 }
 
-
-
 class _LoginState extends State<Login> {
   TextEditingController textEditingController = new TextEditingController();
   @override
@@ -47,7 +45,8 @@ class _LoginState extends State<Login> {
           ),
           Padding(
             padding: const EdgeInsets.only(right: 80),
-            child: TextButton(onPressed: (){},
+            child: TextButton(
+              onPressed: () {},
               child: Center(
                   child: Text(
                 "Change user",
@@ -83,21 +82,27 @@ class _LoginState extends State<Login> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            PinButonLogin(num: "1", onPressed: (){
-                              pinIndexSetUp("1");
-                            }),
+                            PinButonLogin(
+                                num: "1",
+                                onPressed: () {
+                                  pinIndexSetUp("1");
+                                }),
                             SizedBox(
                               width: 8,
                             ),
-                            PinButonLogin(num: "2", onPressed: (){
-                              pinIndexSetUp("2");
-                            }),
+                            PinButonLogin(
+                                num: "2",
+                                onPressed: () {
+                                  pinIndexSetUp("2");
+                                }),
                             SizedBox(
                               width: 8,
                             ),
-                            PinButonLogin(num: "3", onPressed: (){
-                              pinIndexSetUp("3");
-                            }),
+                            PinButonLogin(
+                                num: "3",
+                                onPressed: () {
+                                  pinIndexSetUp("3");
+                                }),
                           ],
                         ),
                         SizedBox(
@@ -107,21 +112,27 @@ class _LoginState extends State<Login> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            PinButonLogin(num: "4", onPressed: (){
-                              pinIndexSetUp("4");
-                            }),
+                            PinButonLogin(
+                                num: "4",
+                                onPressed: () {
+                                  pinIndexSetUp("4");
+                                }),
                             SizedBox(
                               width: 8,
                             ),
-                            PinButonLogin(num: "5", onPressed: (){
-                              pinIndexSetUp("5");
-                            }),
+                            PinButonLogin(
+                                num: "5",
+                                onPressed: () {
+                                  pinIndexSetUp("5");
+                                }),
                             SizedBox(
                               width: 8,
                             ),
-                            PinButonLogin(num: "6", onPressed: (){
-                              pinIndexSetUp("6");
-                            }),
+                            PinButonLogin(
+                                num: "6",
+                                onPressed: () {
+                                  pinIndexSetUp("6");
+                                }),
                           ],
                         ),
                         SizedBox(
@@ -131,21 +142,27 @@ class _LoginState extends State<Login> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            PinButonLogin(num: "7", onPressed: (){
-                              pinIndexSetUp("7");
-                            }),
+                            PinButonLogin(
+                                num: "7",
+                                onPressed: () {
+                                  pinIndexSetUp("7");
+                                }),
                             SizedBox(
                               width: 8,
                             ),
-                            PinButonLogin(num: "8", onPressed: (){
-                              pinIndexSetUp("8");
-                            }),
+                            PinButonLogin(
+                                num: "8",
+                                onPressed: () {
+                                  pinIndexSetUp("8");
+                                }),
                             SizedBox(
                               width: 8,
                             ),
-                            PinButonLogin(num: "9", onPressed: (){
-                              pinIndexSetUp("9");
-                            }),
+                            PinButonLogin(
+                                num: "9",
+                                onPressed: () {
+                                  pinIndexSetUp("9");
+                                }),
                           ],
                         ),
                         SizedBox(
@@ -182,9 +199,11 @@ class _LoginState extends State<Login> {
                             SizedBox(
                               width: 8,
                             ),
-                            PinButonLogin(num: "0", onPressed: (){
-                              pinIndexSetUp("0");
-                            }),
+                            PinButonLogin(
+                                num: "0",
+                                onPressed: () {
+                                  pinIndexSetUp("0");
+                                }),
                             SizedBox(
                               width: 8,
                             ),
@@ -230,35 +249,28 @@ class _LoginState extends State<Login> {
     );
   }
 
-  // 
+  //
   @override
   void initState() {
-    
     super.initState();
   }
-void pinIndexSetUp(String s) {
-  // if(pinIndex==0)
-  //   pinIndex == 1;
-  //   else if(pinIndex < 4)
-  //   pinIndex++;
-  //   setPin(text);
-  //   currentPin(pinIndex-1)=text;
-  //   String strPin = "";
-  //   curentPin.forEach((e){
-  //     strPin += e;
-  //   });
-  //   if(pinIndex==4)
-  //   print(strPin);
 
+  void pinIndexSetUp(String s) {
+    // if(pinIndex==0)
+    //   pinIndex == 1;
+    //   else if(pinIndex < 4)
+    //   pinIndex++;
+    //   setPin(text);
+    //   currentPin(pinIndex-1)=text;
+    //   String strPin = "";
+    //   curentPin.forEach((e){
+    //     strPin += e;
+    //   });
+    //   if(pinIndex==4)
+    //   print(strPin);
+  }
+  setPin(String text) {}
 }
-setPin(String text){
-
-}
-
-
-  
-}
-
 
 class PinScreen extends StatelessWidget {
   const PinScreen({
@@ -273,56 +285,51 @@ class PinScreen extends StatelessWidget {
     return Container(
       width: 340,
       height: 80,
-      decoration:
-          BoxDecoration(border: Border.all(color: Colors.grey.shade300),borderRadius: BorderRadius.all(Radius.circular(4))),
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey.shade300),
+          borderRadius: BorderRadius.all(Radius.circular(4))),
       child: Center(
         child: TextField(
-          
           controller: pinController,
           enabled: false,
           obscureText: true,
           textAlign: TextAlign.center,
-          decoration: InputDecoration(border: InputBorder.none,
-          filled: true,
-          fillColor: Colors.white
-          ),
-          style: TextStyle(fontWeight: FontWeight.bold,
-          fontSize: 20,
-          color: Colors.black),
+          decoration: InputDecoration(
+              border: InputBorder.none, filled: true, fillColor: Colors.white),
+          style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
         ),
       ),
     );
   }
 }
+
 class PinButonLogin extends StatelessWidget {
-    final String num;
-    final Function() onPressed;
+  final String num;
+  final Function() onPressed;
   const PinButonLogin({
     Key? key,
     required this.num,
     required this.onPressed,
   }) : super(key: key);
-  
-    @override
-    Widget build(BuildContext context) {
-      return Container(
-      alignment:Alignment.center,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.grey.shade300,
 
-        ),
-        shape: BoxShape.circle
-        // color: Colors.white,
-      ),
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.grey.shade300,
+          ),
+          shape: BoxShape.circle
+          // color: Colors.white,
+          ),
       height: 100,
       width: 100,
       child: MaterialButton(
         padding: EdgeInsets.all(8),
         onPressed: onPressed,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(100)
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
         child: Center(
             child: Text(
           "$num",
@@ -330,5 +337,5 @@ class PinButonLogin extends StatelessWidget {
         )),
       ),
     );
-    }
   }
+}

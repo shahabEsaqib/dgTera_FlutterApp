@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class AppBarScreen extends StatelessWidget with PreferredSizeWidget {
   final Size preferredSize;
 
@@ -9,50 +8,67 @@ class AppBarScreen extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      
       actions: [
         IconButton(
-            icon: const Icon(Icons.notifications_off,color: Colors.grey,),
-            tooltip: 'notification off',
-            onPressed: () {
-              // handle the press
-            },
+          icon: const Icon(
+            Icons.notifications_off,
+            color: Colors.grey,
           ),
-          IconButton(
-            icon: const Icon(Icons.sync,color: Colors.grey,),
-            tooltip: 'Sync',
-            onPressed: () {
-              // handle the press
-            },
+          tooltip: 'notification off',
+          onPressed: () {
+            // handle the press
+          },
+        ),
+        IconButton(
+          icon: const Icon(
+            Icons.sync,
+            color: Colors.grey,
           ),
-          IconButton(
-            icon: const Icon(Icons.wifi_rounded,color: Colors.grey,),
-            tooltip: 'wifi',
-            onPressed: () {
-              // handle the press
-            },
+          tooltip: 'Sync',
+          onPressed: () {
+            // handle the press
+          },
+        ),
+        IconButton(
+          icon: const Icon(
+            Icons.wifi_rounded,
+            color: Colors.grey,
           ),
-          IconButton(
-            icon: const Icon(Icons.print,color: Colors.grey,),
-            tooltip: 'orint',
-            onPressed: () {
-              // handle the press
-            },
+          tooltip: 'wifi',
+          onPressed: () {
+            // handle the press
+          },
+        ),
+        IconButton(
+          icon: const Icon(
+            Icons.print,
+            color: Colors.grey,
           ),
-          IconButton(
-            icon: const Icon(Icons.message_outlined,color: Colors.deepOrange,),
-            tooltip: 'Open shopping cart',
-            onPressed: () {
-              // handle the press
-            },
+          tooltip: 'orint',
+          onPressed: () {
+            // handle the press
+          },
+        ),
+        IconButton(
+          icon: const Icon(
+            Icons.message_outlined,
+            color: Colors.deepOrange,
           ),
+          tooltip: 'Open shopping cart',
+          onPressed: () {
+            // handle the press
+          },
+        ),
       ],
-      title: Text("DGTERA" ,style: TextStyle(color: Colors.black,)),      
+      title: Text("DGTERA",
+          style: TextStyle(
+            color: Colors.black,
+          )),
       centerTitle: true,
       // shape: CustomShapeBorder(),
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
-      iconTheme: IconThemeData(color: Colors.black,opacity: 0.5),
+      iconTheme: IconThemeData(color: Colors.black, opacity: 0.5),
     );
   }
 }
