@@ -1,5 +1,5 @@
 import 'package:dgtera_tablet_app/dashbored/dashbored.dart';
-import 'package:dgtera_tablet_app/history.dart';
+import 'package:dgtera_tablet_app/history/history.dart';
 import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShift.dart';
 import 'package:dgtera_tablet_app/pages/login.dart';
 import 'package:dgtera_tablet_app/reports/reports.dart';

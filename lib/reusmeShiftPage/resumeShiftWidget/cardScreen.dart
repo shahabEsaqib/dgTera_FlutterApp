@@ -11,7 +11,6 @@ class CardScreen extends StatefulWidget {
 
 class _CardScreenState extends State<CardScreen> {
 
-  bool _hasBeenPressed = false;
 
 
   Widget appBarTitle = Text(
