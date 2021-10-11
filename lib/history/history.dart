@@ -188,6 +188,7 @@ class _HistoryScreenState extends State<HistoryScreen>
                             child: Container(
                               decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
                               width: 180,
+                              // ignore: deprecated_member_use
                               child: FlatButton(
                 onPressed: () => {},
                 color: Colors.white,

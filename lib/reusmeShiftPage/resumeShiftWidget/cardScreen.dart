@@ -1,5 +1,11 @@
+import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/cardDetail.dart';
+
 import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/customer.dart';
+import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/dateAndTime.dart';
+import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/payNow.dart';
+import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/removeAddbutton.dart';
 import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/table.dart';
+import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/totleDetail.dart';
 import 'package:dgtera_tablet_app/widgets/appbar.dart';
 import 'package:dgtera_tablet_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +32,7 @@ class _CardScreenState extends State<CardScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey[200],
-      appBar: AppBarScreen(),
+      appBar: AppBarScreen(text: 'DGTERA',),
       body: Row(
         children: [
           Padding(
@@ -99,182 +105,45 @@ class _CardScreenState extends State<CardScreen> {
                   SizedBox(
                     height: 8,
                   ),
-                  Container(
-                    height: 50,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(8),
-                          topRight: Radius.circular(8),
-                          bottomLeft: Radius.circular(16),
-                          bottomRight: Radius.circular(16),
-                        )),
-                    child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(
-                            Icons.more_vert,
-                            size: 50,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Text(
-                                "#",
-                                style: TextStyle(color: Colors.blue),
-                              ),
-                              Text("Date/Time"),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 8),
-                            child: Icon(
-                              Icons.list_alt,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 350,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(16),
-                            topRight: Radius.circular(16))),
-                    child: ListView.builder(
-                    itemCount: 6,
-                      itemBuilder: (context, index) {
-                          return Card(
-                           
-                           elevation: 0,
-                           child: ListTile(
-
-                             leading: Container(
-                               width: 45,
-                               height: 45,
-                               decoration: BoxDecoration(
-                                 shape: BoxShape.circle,
-                                 border: Border.all(color: Colors.grey)
-                               ),
-                               child: Center(
-                                 child: Text(
-                                               "1",
-                                               style: TextStyle(
-                                   fontSize: 30,
-                                   color: Colors.black),
-                                             ),
-                               ),
-                             ),
-                             title: Text("Spanish Latte Hot",style: TextStyle(
-                                             fontWeight: FontWeight.bold,
-                                             fontSize: 20,
-                                             color: Colors.grey[600])),
-                             subtitle: Text("> 1 Normal Suger",style: TextStyle(
-                                             fontWeight: FontWeight.bold,
-                                             fontSize: 15,
-                                             color: Colors.grey[600])),
-                             trailing: Text("24",
-                             style: TextStyle(
-                                             fontWeight: FontWeight.bold,
-                                             fontSize: 20,
-                                             color: Colors.grey[600])),
-                           )
-                          
-                          );
-                          }),
-                  ),
-                  SingleChildScrollView(
+                  DateAndTime(),
+                 CardDetail(),
+                  TotleDetail(),
+                   GestureDetector(
+                    onTap: (){
+                      dialog();
+                    },
                     child: Container(
-                      width: MediaQuery.of(context).size.width,
-                        height: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                        ),
-                        child: Column(
+                      height: 45,
+                      decoration: BoxDecoration(
+                          color: Color(0xff2b0042),
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(8),
+                              bottomRight: Radius.circular(8))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color: Colors.purple[50],
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: [
-                                    Text("Totle (3 items)",style: TextStyle(
-                                             fontWeight: FontWeight.bold,
-                                             fontSize: 20,
-                                             color: Colors.grey[600])),
-                                    Spacer(),
-                                    Text("39",style: TextStyle(
-                                             fontWeight: FontWeight.bold,
-                                             fontSize: 20,
-                                             color: Colors.grey[600])),
-                                  ],
-                                ),
-                              ),
+                            Text(
+                              "Pay Now",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
                             ),
-                            Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: 50,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: [
-                                    Text("Tax",style: TextStyle(
-                                             fontWeight: FontWeight.bold,
-                                             fontSize: 20,
-                                             color: Colors.grey[600])),
-                                    Spacer(),
-                                    Text("5.09",style: TextStyle(
-                                             fontWeight: FontWeight.bold,
-                                             fontSize: 20,
-                                             color: Colors.grey[600])),
-                                  ],
-                                ),
-                              ),
-                              
+                            Text(
+                              "0 SAR >",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
                             ),
-                            Divider(),
                           ],
-                        
                         ),
-                        ),
-                  ),
-                  Container(
-                    height: 45,
-                    decoration: BoxDecoration(
-                        color: Color(0xff2b0042),
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(8),
-                            bottomRight: Radius.circular(8))),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Pay Now",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            "0 SAR >",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ],
                       ),
                     ),
-                  ),
+                  )
+
                 ],
               ),
             ),
@@ -609,45 +478,44 @@ class _CardScreenState extends State<CardScreen> {
               ),
             ),
           )
+       
         ],
       ),
       drawer: MyDrawer(),
     );
   }
-}
-
-class MinusAddbutton extends StatelessWidget {
-  final Color boxColor;
-  final Color textColor;
-  final String num;
-  final Function() onPressed;
-  const MinusAddbutton({
-    Key? key,
-    required this.num,
-    required this.onPressed,
-    required this.boxColor,
-    required this.textColor,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      decoration: BoxDecoration(color: boxColor, shape: BoxShape.circle
-          // color: Colors.white,
+  dialog() {
+   return showDialog(
+      builder: (BuildContext context) {
+        return Positioned(
+          top: 10,
+          left: 10,
+          child: Dialog(
+            child: Container(
+              height: 200,
+              width: 400,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text("Order type catogory", textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),),
+                  Divider(),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => PayNowScreen()));
+                    },
+                    child: Text("Dine in", textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Color(0xff2b0042)),)),
+                  Divider(),
+                  Text("Take Away", textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Color(0xff2b0042)),),
+                  
+                ],
+              ),
+            ),
           ),
-      height: 50,
-      width: 50,
-      child: MaterialButton(
-        padding: EdgeInsets.all(8),
-        onPressed: onPressed,
-        // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-        child: Center(
-            child: Text(
-          "$num",
-          style: TextStyle(fontSize: 40, color: textColor),
-        )),
-      ),
+        );
+      },
+      context: context,
     );
   }
+
 }
+

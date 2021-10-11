@@ -1,6 +1,10 @@
+import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/cardDetail.dart';
 import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/cardScreen.dart';
 import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/customer.dart';
+import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/dateAndTime.dart';
+import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/payNow.dart';
 import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/table.dart';
+import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/totleDetail.dart';
 import 'package:dgtera_tablet_app/widgets/appbar.dart';
 import 'package:dgtera_tablet_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
@@ -11,20 +15,55 @@ class ResumeScreen extends StatefulWidget {
 }
 
 class _ResumeScreenState extends State<ResumeScreen> {
-  Widget appBarTitle = Text(
-    "My Properties",
-    style: TextStyle(color: Colors.white),
-  );
   Icon actionIcon = Icon(
     Icons.search,
     color: Colors.orange,
   );
+
+  Widget appBarTitle = Text(
+    "My Properties",
+    style: TextStyle(color: Colors.white),
+  );
+
+    dialog() {
+   return showDialog(
+      builder: (BuildContext context) {
+        return Positioned(
+          top: 10,
+          left: 10,
+          child: Dialog(
+            child: Container(
+              height: 200,
+              width: 400,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text("Order type catogory", textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),),
+                  Divider(),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => PayNowScreen()));
+                    },
+                    child: Text("Dine in", textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Color(0xff2b0042)),)),
+                  Divider(),
+                  Text("Take Away", textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Color(0xff2b0042)),),
+                  
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+      context: context,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey[200],
-      appBar: AppBarScreen(),
+      appBar: AppBarScreen(text: 'DGTERA',),
       body: Row(
         children: [
           Padding(
@@ -93,80 +132,47 @@ class _ResumeScreenState extends State<ResumeScreen> {
                   SizedBox(
                     height: 8,
                   ),
-                  Container(
-                    height: 50,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(8))),
-                    child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(Icons.more_vert,size: 50,),
-                          Column(
-                            mainAxisAlignment:MainAxisAlignment.spaceAround,
-                            children: [
-                              Text("#",style: TextStyle(color: Colors.blue),),
-                              Text("Date/Time"),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 8),
-                            child: Icon(
-                              Icons.list_alt,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  SingleChildScrollView(
+                  DateAndTime(),
+                  CardDetail(),
+                  TotleDetail(),
+                                     GestureDetector(
+                    onTap: (){
+                      dialog();
+                    },
                     child: Container(
-                      height: 350,
+                      height: 45,
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Color(0xff2b0042),
                           borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(8),
-                              topRight: Radius.circular(8))),
-                    ),
-                  ),
-                  SingleChildScrollView(
-                    child: Container(
-                        height: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                        )),
-                  ),
-                  Container(
-                    height: 45,
-                    decoration: BoxDecoration(
-                        color: Colors.purpleAccent,
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(8),
-                            bottomRight: Radius.circular(8))),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Pay Now",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            "0 SAR >",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ],
+                              bottomLeft: Radius.circular(8),
+                              bottomRight: Radius.circular(8))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Pay Now",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              "0 SAR >",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
+                  )
+
+                  
+                  
                 ],
               ),
             ),

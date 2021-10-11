@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class AppBarScreen extends StatelessWidget with PreferredSizeWidget {
   final Size preferredSize;
+  String text;
 
-  AppBarScreen() : preferredSize = Size.fromHeight(56.0);
+  AppBarScreen({required this.text}) : preferredSize = Size.fromHeight(56.0);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,) {
     return AppBar(
       actions: [
         IconButton(
@@ -60,7 +62,7 @@ class AppBarScreen extends StatelessWidget with PreferredSizeWidget {
           },
         ),
       ],
-      title: Text("DGTERA",
+      title: Text(text,
           style: TextStyle(
             color: Colors.black,
           )),
