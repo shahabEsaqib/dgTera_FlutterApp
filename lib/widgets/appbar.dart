@@ -1,16 +1,28 @@
+import 'package:dgtera_tablet_app/pages/login.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class AppBarScreen extends StatelessWidget with PreferredSizeWidget {
   final Size preferredSize;
-  String text;
+  // String text;
 
-  AppBarScreen({required this.text}) : preferredSize = Size.fromHeight(56.0);
+  AppBarScreen() : preferredSize = Size.fromHeight(56.0);
 
   @override
   Widget build(BuildContext context,) {
     return AppBar(
       actions: [
+        IconButton(
+          
+          icon: const Icon(
+            Icons.lock,
+            color: Colors.grey,
+          ),
+          tooltip: 'End user',
+          onPressed: () {
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Login()));
+          },
+        ),
         IconButton(
           icon: const Icon(
             Icons.notifications_off,
@@ -54,7 +66,7 @@ class AppBarScreen extends StatelessWidget with PreferredSizeWidget {
         IconButton(
           icon: const Icon(
             Icons.message_outlined,
-            color: Colors.deepOrange,
+            color: Colors.blue,
           ),
           tooltip: 'Open shopping cart',
           onPressed: () {
@@ -62,10 +74,11 @@ class AppBarScreen extends StatelessWidget with PreferredSizeWidget {
           },
         ),
       ],
-      title: Text(text,
-          style: TextStyle(
-            color: Colors.black,
-          )),
+      //  title: Text("Woga" , style:TextStyle(color: Colors.blue)),
+      title: Image.asset(
+      "assets/images/woga.jpg",
+      height: 50,
+    ),
       centerTitle: true,
       // shape: CustomShapeBorder(),
       backgroundColor: Colors.white,
@@ -75,21 +88,3 @@ class AppBarScreen extends StatelessWidget with PreferredSizeWidget {
   }
 }
 
-// class CustomShapeBorder extends ContinuousRectangleBorder {
-//   @override
-//   Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
-
-//     // final double innerCircleRadius = 150.0;
-
-    
-//     double x = 150, y = 45, r = 0.5;
-//     Path path = Path()
-//   ..addRRect(RRect.fromRectAndCorners(rect))
-//   ..moveTo(rect.bottomLeft.dx + 300, rect.bottomCenter.dy)
-//   ..relativeQuadraticBezierTo(((-x / 2)+(x/6)) * (1 - r), 0, -x / 2 * r, y * r)
-//   ..relativeQuadraticBezierTo(-x / 6 * r, y * (1 - r), -x / 2 * (1 - r), y * (1 - r))
-//   ..relativeQuadraticBezierTo(((-x / 2)+(x/6)) * (1 - r), 0, -x / 2 * (1 - r), -y * (1 - r))
-//   ..relativeQuadraticBezierTo(-x/6*r , -y * r, -x / 2 * r, -y * r);
-//     return path;
-//   }
-// }

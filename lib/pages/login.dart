@@ -23,11 +23,12 @@ class _LoginState extends State<Login> {
         backgroundColor: Colors.white,
         // iconTheme: IconThemeData(color: Colors.black, opacity: 0.0),
         leading: Padding(
-          padding: const EdgeInsets.only(left: 16),
-          child: new Material(
-            shape: new CircleBorder(),
+          padding: EdgeInsets.only(left: 16),
+          child: Material(
+            // shape: CircleBorder(),
+            borderRadius: BorderRadius.circular(30),
             child: Image(
-              image: AssetImage("assets/images/google-logo.png"),
+              image: AssetImage("assets/images/Profpic.jpg"),
             ),
           ),
         ),
@@ -44,14 +45,14 @@ class _LoginState extends State<Login> {
             )),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 80),
+            padding: const EdgeInsets.only(right: 70),
             child: TextButton(
               onPressed: () {},
               child: Center(
                   child: Text(
                 "Change user",
                 style: TextStyle(
-                    color: Colors.orange,
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               )),
@@ -214,7 +215,7 @@ class _LoginState extends State<Login> {
                                 ),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(70)),
-                                color: Colors.orange,
+                                color: Colors.blue,
                               ),
                               height: 100,
                               width: 100,

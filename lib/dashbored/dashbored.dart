@@ -21,10 +21,14 @@ class DashboredScreen extends StatelessWidget {
             },
           ),
         ],
-        title: Text("DGTERA",
-            style: TextStyle(
-              color: Colors.black,
-            )),
+        // title: Text("Woga", style:TextStyle(color: Colors.blue)),
+        title: Image.asset(
+      "assets/images/woga.jpg",
+      height: 50,
+      // width: 60,
+      fit: BoxFit.cover,
+      scale: 1,
+    ),
         centerTitle: true,
         // shape: CustomShapeBorder(),
         backgroundColor: Colors.white,
@@ -221,7 +225,7 @@ class DashboredScreen extends StatelessWidget {
 class HeaderCurvedContainer extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()..color = Colors.grey.shade300;
+    Paint paint = Paint()..color = Colors.blue;
     Path path = Path()
       ..relativeLineTo(0, 150)
       ..quadraticBezierTo(size.width / 2, 250.0, size.width, 150)

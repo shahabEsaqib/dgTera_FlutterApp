@@ -32,7 +32,7 @@ class _CardScreenState extends State<CardScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey[200],
-      appBar: AppBarScreen(text: 'DGTERA',),
+      appBar: AppBarScreen(),
       body: Row(
         children: [
           Padding(
@@ -209,7 +209,7 @@ class _CardScreenState extends State<CardScreen> {
                             MinusAddbutton(
                               num: "-",
                               onPressed: () {},
-                              boxColor: Colors.orange,
+                              boxColor: Colors.blue,
                               textColor: Colors.white,
                             ),
                             Container(
@@ -225,7 +225,7 @@ class _CardScreenState extends State<CardScreen> {
                             MinusAddbutton(
                               num: "+",
                               onPressed: () {},
-                              boxColor: Colors.orange,
+                              boxColor: Colors.blue,
                               textColor: Colors.white,
                             ),
                             SizedBox(
@@ -461,7 +461,7 @@ class _CardScreenState extends State<CardScreen> {
                         height: 50,
                         width: 600,
                         decoration: BoxDecoration(
-                            color: Colors.orange,
+                            color: Colors.blue,
                             borderRadius: BorderRadius.all(Radius.circular(4))),
                         child: Center(
                             child: Text(

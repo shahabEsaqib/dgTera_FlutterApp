@@ -50,7 +50,7 @@ class _TableWidgetState extends State<TableWidget> {
                               width: 150,
                               // height: 80,
                               decoration: BoxDecoration(
-                                  color: Colors.orange,
+                                  color: Colors.blue,
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10))),
                               child: Center(
@@ -355,7 +355,7 @@ class _TableWidgetState extends State<TableWidget> {
                               decoration: BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10)),
-                                  color: Colors.amberAccent[700]),
+                                  color: Colors.blue),
                               child: Center(
                                 child: Center(
                                     child: Text(
@@ -384,7 +384,7 @@ class _TableWidgetState extends State<TableWidget> {
                             decoration: BoxDecoration(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
-                              color: Colors.amberAccent[700],
+                              color: Colors.blue,
                             ),
                             child: Center(
                                 child: Text(

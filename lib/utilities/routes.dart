@@ -4,4 +4,5 @@ class MyRoutes {
   static var dashboredRoute = "/dashbored";
   static var reports = "/reports";
   static var history = "/history";
+  static var product = "/product";
 }

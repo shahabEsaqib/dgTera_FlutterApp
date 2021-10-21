@@ -1,8 +1,10 @@
+import 'package:dgtera_tablet_app/product/allProducts.dart';
 import 'package:dgtera_tablet_app/dashbored/dashbored.dart';
 import 'package:dgtera_tablet_app/history/history.dart';
 import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShift.dart';
 import 'package:dgtera_tablet_app/pages/login.dart';
 import 'package:dgtera_tablet_app/reports/reports.dart';
+import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -30,14 +32,16 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
-      initialRoute: "/",
+      initialRoute: "login",
 
       routes: {
-        "/": (context) => Login(),
+        "login": (context) => Login(),
         MyRoutes.dashboredRoute: (context) => DashboredScreen(),
+        MyRoutes.loginRoute: (context) => Login(),
         MyRoutes.resumeRoute: (context) => ResumeScreen(),
         MyRoutes.reports: (context) => ReportScreen(),
-        MyRoutes.history: (context) => HistoryScreen()
+        MyRoutes.history: (context) => HistoryScreen(),
+        MyRoutes.product: (context) => ProductDetails()
       }
     );
     

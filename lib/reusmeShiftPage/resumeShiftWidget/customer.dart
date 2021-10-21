@@ -1,3 +1,4 @@
+import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/addCostumer.dart';
 import 'package:flutter/material.dart';
 
 class Customer extends StatelessWidget {
@@ -31,7 +32,7 @@ class Customer extends StatelessWidget {
                       decoration: BoxDecoration(color: Colors.white),
                       child: Icon(
                         Icons.home,
-                        color: Colors.orange,
+                        color: Colors.blue,
                       )),
                   // SizedBox(width: 8,),
                   Container(
@@ -58,7 +59,7 @@ class Customer extends StatelessWidget {
                   Container(
                       height: 40,
                       width: 60,
-                      decoration: BoxDecoration(color: Colors.orange),
+                      decoration: BoxDecoration(color: Colors.blue),
                       child: Icon(
                         Icons.search,
                         color: Colors.white,
@@ -67,17 +68,22 @@ class Customer extends StatelessWidget {
                     width: 12,
                   ),
                   Expanded(
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: 40,
-                      decoration: BoxDecoration(color: Colors.orange),
-                      child: Center(
-                        child: Text(
-                          "Add Coustomer",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=> AddCostomer()));
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 40,
+                        decoration: BoxDecoration(color: Colors.blue),
+                        child: Center(
+                          child: Text(
+                            "Add Coustomer",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
@@ -156,6 +162,7 @@ class Customer extends StatelessWidget {
                     ),
                   ],
                 ),
+     
                 Expanded(
                   child: ListView.separated(
                       separatorBuilder: (context, index) {
@@ -232,5 +239,7 @@ class Customer extends StatelessWidget {
             ),
           ),
         ]));
+ 
   }
 }
+

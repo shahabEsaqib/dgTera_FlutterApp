@@ -5,6 +5,36 @@ import 'package:flutter/material.dart';
 class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+     dialog() {
+   return showDialog(
+      builder: (BuildContext context) {
+        return Positioned(
+          top: 10,
+          left: 10,
+          child: Dialog(
+            child: Container(
+              height: 200,
+              width: 400,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text("Discount", textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),),
+                  Divider(),
+                  Text("10 %", textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Color(0xff2b0042)),),
+                  Divider(),
+                  Text("20 %", textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Color(0xff2b0042)),),
+                  Divider(),
+                  Text("30%", textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Color(0xff2b0042)),),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+      context: context,
+    );
+  }
     return Drawer(
       child: Container(
         color: Colors.white,
@@ -15,9 +45,9 @@ class MyDrawer extends StatelessWidget {
               color: Color(0xfffff2f3),
               height: 100,
               width: 100,
-              padding: EdgeInsets.fromLTRB(70, 60, 20, 20),
+              padding: EdgeInsets.fromLTRB(70, 60, 20, 10),
               child: Text(
-                "POS",
+                "Woga",
                 style: TextStyle(
                     color: Colors.grey.shade700,
                     fontSize: 20,
@@ -83,6 +113,36 @@ class MyDrawer extends StatelessWidget {
                   ),
                   title: Text(
                     "Report",
+                    textScaleFactor: 1.2,
+                    style: TextStyle(color: Colors.grey[600], fontSize: 20),
+                  )),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.product);
+              },
+              child: ListTile(
+                  leading: Icon(
+                    Icons.production_quantity_limits,
+                    color: Colors.grey,
+                  ),
+                  title: Text(
+                    "Product",
+                    textScaleFactor: 1.2,
+                    style: TextStyle(color: Colors.grey[600], fontSize: 20),
+                  )),
+            ),
+            GestureDetector(
+              onTap: () {
+               dialog();
+              },
+              child: ListTile(
+                  leading: Icon(
+                    Icons.production_quantity_limits,
+                    color: Colors.grey,
+                  ),
+                  title: Text(
+                    "Discount",
                     textScaleFactor: 1.2,
                     style: TextStyle(color: Colors.grey[600], fontSize: 20),
                   )),

@@ -17,6 +17,7 @@ class HistoryScreen extends StatefulWidget {
 class _HistoryScreenState extends State<HistoryScreen>
     with SingleTickerProviderStateMixin {
   late TabController _controller;
+  String? _chosenValue;
 
   @override
   void initState() {
@@ -142,6 +143,92 @@ class _HistoryScreenState extends State<HistoryScreen>
                           ],
                         ),
                       ),
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      width: MediaQuery.of(context).size.width/4,
+                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
+                      child: DropdownButton<String>(
+                        iconEnabledColor: Colors.black,
+                        dropdownColor: Colors.white,
+                        isExpanded: true,
+                        underline:SizedBox(),
+                        value: _chosenValue,
+                        //elevation: 5,
+                        style: TextStyle(color: Colors.black),
+
+                        items: <String>[
+                          'User 1',
+                          'User 2',
+                          'User 3',
+                          'User 4',
+                        ].map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        hint: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Session",
+                            style: TextStyle(
+                                color: Colors.grey[500],
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        onChanged: (String? value) {
+                          setState(() {
+                            _chosenValue = value;
+                          });
+                        },
+                      ),
+                    ),
+                    // SizedBox(width: 8,),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      width: MediaQuery.of(context).size.width/4,
+                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
+                      child: DropdownButton<String>(
+                        iconEnabledColor: Colors.black,
+                        dropdownColor: Colors.white,
+                        isExpanded: true,
+                        underline:SizedBox(),
+                        value: _chosenValue,
+                        //elevation: 5,
+                        style: TextStyle(color: Colors.black),
+
+                        items: <String>[
+                          'Credit',
+                          'Cash',
+                        ].map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        hint: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Sale Report",
+                            style: TextStyle(
+                                color: Colors.grey[500],
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        onChanged: (String? value) {
+                          setState(() {
+                            _chosenValue = value;
+                          });
+                        },
+                      ),
+                    ),
+   
+                      ],
                     ),
                     Expanded(
                       flex: 1,

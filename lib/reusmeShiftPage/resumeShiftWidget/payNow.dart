@@ -28,7 +28,7 @@ class _PayNowScreenState extends State<PayNowScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey[200],
-      appBar: AppBarScreen(text: 'CHECKOUT',),
+      appBar: AppBarScreen(),
       body: Row(
         children: [
           Padding(
@@ -273,23 +273,7 @@ class _PayNowScreenState extends State<PayNowScreen> {
                               ),
                               SizedBox(height: 12,),
                               pamentMethodBox("Card",Icons.local_atm_outlined),
-                              SizedBox(height: 30,),
-                              Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Container(
-                                          width: MediaQuery.of(context).size.width,
-                                          height: 60,
-                                          decoration: BoxDecoration(
-                                                color: Colors.red[200],
-                                                borderRadius: BorderRadius.circular(16)
-                                              ),                                          
-                                            child:Center(
-                                            child: Text("POS Sale Journal",style: TextStyle(color: Colors.grey[600], fontSize: 15),
-),
-                                          )
-                                        ),
-                              )
-                            ]
+                                                        ]
                           ),
                         ),
                       ),)
