@@ -116,7 +116,7 @@ class Product extends StatelessWidget {
                                   CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  "Price",
+                                  "10 SAR",
                                   style: TextStyle(
                                       fontFamily: 'Raleway',
                                       fontWeight: FontWeight.bold,
@@ -125,7 +125,7 @@ class Product extends StatelessWidget {
                                 ),
                                 Spacer(),
                                 Text(
-                                  "Stock",
+                                  "2",
                                   style: TextStyle(
                                       fontFamily: 'Raleway',
                                       fontWeight: FontWeight.bold,

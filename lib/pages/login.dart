@@ -24,12 +24,9 @@ class _LoginState extends State<Login> {
         // iconTheme: IconThemeData(color: Colors.black, opacity: 0.0),
         leading: Padding(
           padding: EdgeInsets.only(left: 16),
-          child: Material(
-            // shape: CircleBorder(),
-            borderRadius: BorderRadius.circular(30),
-            child: Image(
-              image: AssetImage("assets/images/Profpic.jpg"),
-            ),
+          child: CircleAvatar(
+           // borderRadius: BorderRadius.circular(30),
+            backgroundImage: AssetImage("assets/images/Profpic.jpg")
           ),
         ),
         actions: [

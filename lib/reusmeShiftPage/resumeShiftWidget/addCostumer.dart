@@ -1,11 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
-class AddCostomer extends StatelessWidget {
+class AddCostomer extends StatefulWidget {
   const AddCostomer({ Key? key }) : super(key: key);
 
   @override
+  _AddCostomerState createState() => _AddCostomerState();
+}
+
+class _AddCostomerState extends State<AddCostomer> {
+
+
+  final _formKey = GlobalKey<FormState>();
+    final TextEditingController controller = TextEditingController();
+  String initialCountry = 'SA';
+  PhoneNumber number = PhoneNumber(isoCode: 'SA');
+  void getPhoneNumber(String phoneNumber) async {
+    PhoneNumber number =
+        await PhoneNumber.getRegionInfoFromPhoneNumber(phoneNumber, 'US');
+
+    setState(() {
+      this.number = number;
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+  @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
+    
+  
+    
     return Scaffold(
       appBar: AppBar(
           elevation: 0,
@@ -56,7 +84,7 @@ class AddCostomer extends StatelessWidget {
                       width: 2,
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width / 5,
+                      width: MediaQuery.of(context).size.width / 4,
                       height: 50,
                       decoration: BoxDecoration(color: Colors.grey),
                       child: Padding(
@@ -125,25 +153,35 @@ class AddCostomer extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  width: MediaQuery.of(context).size.width / 5,
+                                  width: MediaQuery.of(context).size.width / 4,
                                   height: 50,
                                   decoration: BoxDecoration(color: Colors.white),
                                   child: Padding(
-                                    padding:
-                                        const EdgeInsets.only(left: 8, top: 12),
-                                    child: TextFormField(
-                                      decoration: InputDecoration(
-                                        hintText: "Enter Phone No",
-                            //              enabledBorder: UnderlineInputBorder(      
-                            // borderSide: BorderSide(color: Colors.black),   
-                            // ),  
-              focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
-                         ),  
-                                      ),
-                                      style: TextStyle(
-                                          fontSize: 20, color: Colors.black),
-                                    ),
+                                    padding: const EdgeInsets.only(left: 8),
+                                    child: InternationalPhoneNumberInput(
+              onInputChanged: (PhoneNumber number) {
+                print(number.phoneNumber);
+              },
+              onInputValidated: (bool value) {
+                print(value);
+              },
+              selectorConfig: SelectorConfig(
+                selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+              ),
+              maxLength: 10,
+              ignoreBlank: true,
+              autoValidateMode: AutovalidateMode.disabled,
+              selectorTextStyle: TextStyle(color: Colors.black),
+              initialValue: number,
+              textFieldController: controller,
+              formatInput: false,
+              keyboardType:
+                  TextInputType.numberWithOptions(signed: true, decimal: true),
+              // inputBorder: OutlineInputBorder(),
+              onSaved: (PhoneNumber number) {
+                print('On Saved: $number');
+              },
+            ),
                                   ),
                                 ),
                                 SizedBox(
@@ -202,4 +240,5 @@ class AddCostomer extends StatelessWidget {
           ),
         ]));
   }
+ 
 }

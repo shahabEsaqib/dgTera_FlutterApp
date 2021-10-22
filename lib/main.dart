@@ -4,7 +4,6 @@ import 'package:dgtera_tablet_app/history/history.dart';
 import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShift.dart';
 import 'package:dgtera_tablet_app/pages/login.dart';
 import 'package:dgtera_tablet_app/reports/reports.dart';
-import 'package:dgtera_tablet_app/reusmeShiftPage/resumeShiftWidget/product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
